@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+main {
+  padding: 5% 20% 1% 20%;
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.8s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 5px black;
+}
+
+.front {
+  backface-visibility: hidden;
+  position: absolute;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  backface-visibility: hidden;
+}
+
+.cardImage {
+  width: 7rem;
+  height: 7rem;
+  object-fit: cover;
+}
+
+.cardFlip {
+  transform: rotateY(180deg);
+}
+
+.backImage {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: green;
+  border: 2px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backImage:hover {
+  background-color: rgba(0, 128, 0, 0.548);
+}
+
+.backText {
+  font-family: 'Roboto';
+  font-size: 2rem;
+  color: gray;
+  transform: rotate(-45deg);
+}
+
