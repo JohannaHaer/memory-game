@@ -84,7 +84,7 @@ let cards = [
         matched: false
     },
     {
-        link: '/img/15.JPG',
+        link: '/img/15.jpg',
         number: 15,
         id: 15,
         matched: false
@@ -174,7 +174,7 @@ let cards = [
         matched: false
     },
     {
-        link: '/img/15.JPG',
+        link: '/img/15.jpg',
         number: 15,
         id: 30,
         matched: false
