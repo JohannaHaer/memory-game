@@ -11,7 +11,11 @@ const CardItem = ({link, number}) => {
   return (
     <button className={`cards ${active ? 'cardFlip' : ''}`} onClick={handleFlip}>
         <div className='front'><img src={link} alt={number} className='cardImage'/></div>
-        <div className='back'><div className='backImage'><p className='backText'>Memory</p></div></div>
+        <div className='back'>
+          <div className='backImage'>
+            <p className='backText'>Memory</p>
+          </div>
+        </div>
     </button>
   )
 }
