@@ -5,4 +5,4 @@ Welcome to the memory game! This project is a classic memory game created with R
 [Lets play](https://memory-game-fp1u.onrender.com/)
 
 # Author
-- [@JohannaHaer](https://github.com/JohannaHaer)
+[@JohannaHaer](https://github.com/JohannaHaer)
