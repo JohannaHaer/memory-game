@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { mainContext } from "../context/mainProvider";
 import CardItem from "./CardItem";
 
@@ -9,7 +9,7 @@ const CardList = () => {
     opened: false,
   }));
 
-  const openedNotMatched = null;
+  const [openedNotMatched, setOpenedNotMatched] = useState(null);
 
   const handleFlip = (cardId) => {
     // Wenn Karte mit cardID schon gematched ist, dann beenden.
@@ -28,14 +28,39 @@ const CardList = () => {
     });
 
     // Wenn openedNotMatched leer ist,
+    if (openedNotMatched == null) {
     //      cardID number einfügen
+        setOpenedNotMatched(cardId)
     // Ansonsten
+    } else {
     //      Wenn openedNotMatched != null und cardID number = zweiter cardID number ist
+        if(openedNotMatched.value == cardId) {
     //          openedNotMatched = null
     //          matched = true für beide
+            setOpenedNotMatched(null)
+            cards.map((c) => {
+                if (c.id == cardId) {
+                    ({
+                        ...c,
+                        matched: true,
+                    })
+                } 
+            })
     //      Ansonsten
     //          openedNotMatched = null
     //          opened = false für beide
+        } else {
+            setOpenedNotMatched(null)
+            cards.map((c) => {
+                if (c.id != openedNotMatched.value && c.id != cardId) {
+                    ({
+                        ...c,
+                        opened: false,
+                    })
+                } 
+            })    
+        }
+    }
   };
 
   const shuffle = () => {
